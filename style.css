@@ -1,0 +1,104 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+body{
+    background: linear-gradient(#1A2980,#26d0ce);
+    
+}
+
+.main{
+    height: 100vh;
+    width: 100vw;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.quizbox{
+    width: 100%;
+    max-width: 400px;
+    /* height: 400px; */
+    background-color:   white;
+    /* margin: 40px; */
+    padding: 0px 30px;
+    border-radius: 3px;
+    
+}
+.ansbox{
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+    /* padding: 5px; */
+}
+
+h2{
+    margin: 20px 0 0 0;
+    color:black;
+}
+p{
+    margin-top: 10px;
+    font-size: 20px;
+
+}
+.ansbox button{
+    margin: 8px 0px;
+    /* max-height: 30px; */
+    min-height: 40px;
+
+    border-radius: 10px;
+    outline: none;
+    border: 1.2px solid black;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 10px;
+    transition: all 0.5s;
+}
+
+.nextbtn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nextbtn button{
+    height: 25px;
+    width: 95px;
+    border-radius: 0;
+    border: 1px solid black;
+    color: white;
+    background-color: #070a20;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+    /* padding: 4px; */
+}
+.nextbtn p{
+    font-size: 12px;
+    margin-top: 6px;
+    margin-bottom: 9px;
+}
+.result{
+   background-color: white;
+   padding: 50px;
+   text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 20px;
+}
+#restartBtn{
+    padding: 8px;
+    color: white;
+    background-color: #576eef;
+    margin-top: 8px;
+    border: none;
+    border-radius: 5px;
+}
