@@ -10,7 +10,13 @@
 </head>
 <body>
     <div class="main">
-        <div class="quizbox">
+        <!-- Loader -->
+        <div class="loader" id="loader">
+            <div class="spinner"></div>
+            <p>Loading questions...</p>
+        </div>
+        
+        <div class="quizbox" style="display:none;">
             <h2 id="title">MySQL QUIZ</h2>
             <hr>
             <p> </p>
@@ -28,6 +34,7 @@
             <button id="restartBtn">Restart Quiz</button>
         </div>
     </div>
+<script src="config.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

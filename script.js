@@ -7,7 +7,7 @@ const quizBox = document.querySelector(".quizbox");
 const resultBox = document.querySelector(".result");
 const finalScoreDisplay = document.querySelector("#finalScore");
 const restartBtn = document.querySelector("#restartBtn");
-
+const loader = document.querySelector("#loader");
 
 let k = 0; // Current question index
 let currentScore = 0; // Track score
@@ -16,14 +16,20 @@ let data = []; // Store fetched questions
 // Fetch questions from the API
 const getQuestions = async function () {
   try {
+    loader.style.display = "flex"; // Show loader
+    quizBox.style.display = "none"; // Hide quiz box
+
     const response = await fetch(
-      "https://quizapi.io/api/v1/questions?apiKey=w6z8v5wEWQg8z1D2IFBw7MOhjmIZl77HRbZb5FhK&category=sql&limit=10&tags=MySQL"
+      `${CONFIG.BASE_URL}?apiKey=${CONFIG.API_KEY}&category=${CONFIG.QUIZ_SETTINGS.category}&limit=${CONFIG.QUIZ_SETTINGS.limit}&tags=${CONFIG.QUIZ_SETTINGS.tags}`
     );
     data = await response.json();
-    console.log(data);
+    
+    loader.style.display = "none"; // Hide loader
+    quizBox.style.display = "block"; // Show quiz box
     displayQuestion(data[k]); // Display the first question
   } catch (error) {
     console.error("Error fetching questions:", error);
+    loader.innerHTML = "Failed to load questions. Please try again.";
   }
 };
 
@@ -59,7 +65,6 @@ function displayQuestion(que) {
     }
   });
 
-  // console.log("Correct Answer:", answers[correctAnswer]);
   chooseAnswer(answers, correctAnswer);
 }
 
